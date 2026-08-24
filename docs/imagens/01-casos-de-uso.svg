@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1560" viewBox="0 0 1200 1560" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="seta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f3b57"/>
+    </marker>
+    <marker id="triangulo" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#ffffff" stroke="#1f3b57" stroke-width="1.5"/>
+    </marker>
+    <g id="ator">
+      <circle cx="0" cy="-30" r="11" fill="#ffffff" stroke="#1f3b57" stroke-width="2.2"/>
+      <line x1="0" y1="-19" x2="0" y2="12" stroke="#1f3b57" stroke-width="2.2"/>
+      <line x1="-17" y1="-6" x2="17" y2="-6" stroke="#1f3b57" stroke-width="2.2"/>
+      <line x1="0" y1="12" x2="-14" y2="36" stroke="#1f3b57" stroke-width="2.2"/>
+      <line x1="0" y1="12" x2="14" y2="36" stroke="#1f3b57" stroke-width="2.2"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="1560" fill="#ffffff"/>
+  <text x="600" y="42" text-anchor="middle" font-size="25" font-weight="bold" fill="#12293d">Diagrama de Casos de Uso - FarmaGest</text>
+
+  <!-- Fronteira do sistema -->
+  <rect x="420" y="58" width="760" height="1462" rx="10" fill="#f7fafc" stroke="#1f3b57" stroke-width="2"/>
+  <text x="800" y="86" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f3b57">FarmaGest - Sistema de Gestao de Farmacia</text>
+
+  <!-- ================= Atores ================= -->
+  <g transform="translate(150,172)"><use href="#ator"/></g>
+  <text x="150" y="228" text-anchor="middle" font-size="15" font-weight="bold" fill="#12293d">Administrador</text>
+
+  <g transform="translate(150,560)"><use href="#ator"/></g>
+  <text x="150" y="616" text-anchor="middle" font-size="15" font-weight="bold" fill="#12293d">Farmaceutico</text>
+
+  <g transform="translate(150,1150)"><use href="#ator"/></g>
+  <text x="150" y="1206" text-anchor="middle" font-size="15" font-weight="bold" fill="#12293d">Operador de Caixa</text>
+
+  <!-- Generalizacao entre atores: o perfil de cima herda as permissoes do de baixo -->
+  <line x1="150" y1="240" x2="150" y2="507" stroke="#1f3b57" stroke-width="2" marker-end="url(#triangulo)"/>
+  <line x1="150" y1="628" x2="150" y2="1097" stroke="#1f3b57" stroke-width="2" marker-end="url(#triangulo)"/>
+  <text x="163" y="382" font-size="13" fill="#557089" font-style="italic">herda</text>
+  <text x="163" y="872" font-size="13" fill="#557089" font-style="italic">herda</text>
+
+  <!-- ================= Casos de uso ================= -->
+  <!-- Exclusivos do administrador -->
+  <ellipse cx="760" cy="130" rx="205" ry="31" fill="#e8f0f8" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="136" text-anchor="middle" font-size="15" fill="#12293d">Gerir utilizadores</text>
+
+  <ellipse cx="760" cy="215" rx="205" ry="31" fill="#e8f0f8" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="221" text-anchor="middle" font-size="15" fill="#12293d">Definir perfis de acesso</text>
+
+  <!-- Farmaceutico -->
+  <ellipse cx="760" cy="300" rx="205" ry="31" fill="#eaf5ee" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="306" text-anchor="middle" font-size="15" fill="#12293d">Gerir medicamentos</text>
+
+  <ellipse cx="760" cy="385" rx="205" ry="31" fill="#eaf5ee" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="391" text-anchor="middle" font-size="15" fill="#12293d">Gerir categorias</text>
+
+  <ellipse cx="760" cy="470" rx="205" ry="31" fill="#eaf5ee" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="476" text-anchor="middle" font-size="15" fill="#12293d">Gerir fornecedores</text>
+
+  <ellipse cx="760" cy="555" rx="205" ry="31" fill="#eaf5ee" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="561" text-anchor="middle" font-size="15" fill="#12293d">Gerir lotes de stock</text>
+
+  <ellipse cx="760" cy="640" rx="205" ry="31" fill="#eaf5ee" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="646" text-anchor="middle" font-size="15" fill="#12293d">Ajustar inventario</text>
+
+  <ellipse cx="760" cy="725" rx="205" ry="31" fill="#eaf5ee" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="731" text-anchor="middle" font-size="15" fill="#12293d">Consultar relatorios</text>
+
+  <ellipse cx="760" cy="810" rx="205" ry="31" fill="#eaf5ee" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="816" text-anchor="middle" font-size="15" fill="#12293d">Anular venda</text>
+
+  <ellipse cx="760" cy="900" rx="205" ry="31" fill="#fdf4e3" stroke="#1f3b57" stroke-width="1.8" stroke-dasharray="0"/>
+  <text x="760" y="906" text-anchor="middle" font-size="15" fill="#12293d">Repor stock dos lotes</text>
+
+  <!-- Caixa -->
+  <ellipse cx="760" cy="985" rx="205" ry="31" fill="#fdeaea" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="991" text-anchor="middle" font-size="15" fill="#12293d">Autenticar no sistema</text>
+
+  <ellipse cx="760" cy="1070" rx="205" ry="31" fill="#fdeaea" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="1076" text-anchor="middle" font-size="15" fill="#12293d">Consultar catalogo</text>
+
+  <ellipse cx="760" cy="1155" rx="205" ry="31" fill="#fdeaea" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="1161" text-anchor="middle" font-size="15" fill="#12293d">Gerir clientes</text>
+
+  <ellipse cx="760" cy="1245" rx="205" ry="31" fill="#fdeaea" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="1251" text-anchor="middle" font-size="15" fill="#12293d">Registar venda</text>
+
+  <ellipse cx="760" cy="1335" rx="205" ry="31" fill="#fdf4e3" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="1341" text-anchor="middle" font-size="15" fill="#12293d">Abater stock por FEFO</text>
+
+  <ellipse cx="760" cy="1440" rx="205" ry="31" fill="#fdf4e3" stroke="#1f3b57" stroke-width="1.8"/>
+  <text x="760" y="1446" text-anchor="middle" font-size="15" fill="#12293d">Emitir recibo</text>
+
+  <!-- ============ Associacoes ator -> caso de uso ============ -->
+  <g stroke="#1f3b57" stroke-width="1.6" fill="none">
+    <!-- Administrador -->
+    <line x1="172" y1="160" x2="555" y2="130"/>
+    <line x1="172" y1="185" x2="555" y2="215"/>
+    <!-- Farmaceutico -->
+    <line x1="172" y1="545" x2="555" y2="300"/>
+    <line x1="172" y1="548" x2="555" y2="385"/>
+    <line x1="172" y1="552" x2="555" y2="470"/>
+    <line x1="172" y1="556" x2="555" y2="555"/>
+    <line x1="172" y1="562" x2="555" y2="640"/>
+    <line x1="172" y1="568" x2="555" y2="725"/>
+    <line x1="172" y1="574" x2="555" y2="810"/>
+    <!-- Caixa -->
+    <line x1="172" y1="1138" x2="555" y2="985"/>
+    <line x1="172" y1="1144" x2="555" y2="1070"/>
+    <line x1="172" y1="1152" x2="555" y2="1155"/>
+    <line x1="172" y1="1160" x2="555" y2="1245"/>
+  </g>
+
+  <!-- ============ Include / Extend ============ -->
+  <!-- Anular venda <<include>> Repor stock dos lotes -->
+  <line x1="760" y1="841" x2="760" y2="863" stroke="#1f3b57" stroke-width="1.6" stroke-dasharray="7,5" marker-end="url(#seta)"/>
+  <text x="775" y="858" font-size="13" fill="#557089" font-style="italic">&#171;include&#187;</text>
+
+  <!-- Registar venda <<include>> Abater stock por FEFO -->
+  <line x1="760" y1="1276" x2="760" y2="1298" stroke="#1f3b57" stroke-width="1.6" stroke-dasharray="7,5" marker-end="url(#seta)"/>
+  <text x="775" y="1293" font-size="13" fill="#557089" font-style="italic">&#171;include&#187;</text>
+
+  <!-- Emitir recibo <<extend>> Registar venda (contornando o caso incluido) -->
+  <path d="M 950 1432 L 1045 1420 L 1045 1262 L 950 1252" fill="none" stroke="#1f3b57" stroke-width="1.6" stroke-dasharray="7,5" marker-end="url(#seta)"/>
+  <text x="1055" y="1345" font-size="13" fill="#557089" font-style="italic">&#171;extend&#187;</text>
+
+  <!-- ============ Legenda ============ -->
+  <rect x="40" y="1330" width="330" height="180" rx="8" fill="#ffffff" stroke="#c3d0dc" stroke-width="1.5"/>
+  <text x="60" y="1358" font-size="15" font-weight="bold" fill="#12293d">Legenda</text>
+  <ellipse cx="80" cy="1387" rx="22" ry="11" fill="#e8f0f8" stroke="#1f3b57" stroke-width="1.5"/>
+  <text x="115" y="1392" font-size="13" fill="#12293d">Exclusivo do administrador</text>
+  <ellipse cx="80" cy="1419" rx="22" ry="11" fill="#eaf5ee" stroke="#1f3b57" stroke-width="1.5"/>
+  <text x="115" y="1424" font-size="13" fill="#12293d">Farmaceutico (e administrador)</text>
+  <ellipse cx="80" cy="1451" rx="22" ry="11" fill="#fdeaea" stroke="#1f3b57" stroke-width="1.5"/>
+  <text x="115" y="1456" font-size="13" fill="#12293d">Todos os perfis autenticados</text>
+  <ellipse cx="80" cy="1483" rx="22" ry="11" fill="#fdf4e3" stroke="#1f3b57" stroke-width="1.5"/>
+  <text x="115" y="1488" font-size="13" fill="#12293d">Automatico (include / extend)</text>
+</svg>

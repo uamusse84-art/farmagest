@@ -1,0 +1,166 @@
+/* FarmaGest - folha de estilo da aplicacao */
+
+:root {
+    --fg-primaria: #0d6e5f;
+    --fg-primaria-escura: #0a564a;
+    --fg-clara: #e8f5f2;
+    --fg-lateral: #123c39;
+}
+
+body {
+    background-color: #f5f7f9;
+    font-size: 0.95rem;
+}
+
+/* ------------------------------- Topo -------------------------------- */
+.barra-topo {
+    background: linear-gradient(90deg, var(--fg-primaria) 0%, var(--fg-primaria-escura) 100%);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .12);
+}
+
+.barra-topo .navbar-brand,
+.barra-topo .navbar-brand:hover {
+    color: #fff;
+}
+
+.avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .2);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* --------------------------- Menu lateral ---------------------------- */
+.menu-lateral {
+    background-color: var(--fg-lateral);
+    min-height: calc(100vh - 56px);
+}
+
+.menu-lateral .nav-link {
+    color: rgba(255, 255, 255, .75);
+    border-radius: .375rem;
+    margin: .15rem .6rem;
+    padding: .6rem .8rem;
+    transition: background-color .15s ease-in-out, color .15s ease-in-out;
+}
+
+.menu-lateral .nav-link:hover {
+    background-color: rgba(255, 255, 255, .08);
+    color: #fff;
+}
+
+.menu-lateral .nav-link.active {
+    background-color: var(--fg-primaria);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ------------------------------ Cartoes ------------------------------ */
+.card {
+    border: 1px solid #e6eaee;
+    border-radius: .6rem;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, .04);
+}
+
+.card-indicador {
+    border-left: 4px solid var(--fg-primaria);
+}
+
+.card-indicador .valor {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.card-indicador .icone {
+    font-size: 1.8rem;
+    opacity: .25;
+}
+
+/* ------------------------------ Tabelas ------------------------------ */
+.table thead th {
+    background-color: #eef2f5;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    color: #55606a;
+    white-space: nowrap;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+/* -------------------------- Pagina de login -------------------------- */
+.pagina-limpa {
+    background: linear-gradient(135deg, var(--fg-primaria) 0%, #0a3d38 100%);
+    min-height: 100vh;
+}
+
+.caixa-login {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.marca-login i {
+    font-size: 2.6rem;
+    color: var(--fg-primaria);
+}
+
+/* ------------------------- Grafico do painel ------------------------- */
+.grafico-vendas {
+    height: 240px;
+}
+
+/* --------------------------- Ecra de venda --------------------------- */
+.lista-produtos {
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.produto-item {
+    cursor: pointer;
+}
+
+.produto-item:hover {
+    background-color: var(--fg-clara);
+}
+
+/* ------------------------------ Recibo ------------------------------- */
+.recibo {
+    max-width: 480px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    font-family: "Courier New", Courier, monospace;
+}
+
+@media print {
+    .sem-impressao { display: none !important; }
+    body { background: #fff; }
+    .recibo { box-shadow: none; margin: 0; }
+}
+
+/* ---------------------------- Utilitarios ---------------------------- */
+.badge-suave {
+    background-color: var(--fg-clara);
+    color: var(--fg-primaria-escura);
+    font-weight: 600;
+}
+
+.tabela-vazia {
+    padding: 2.5rem 1rem;
+    text-align: center;
+    color: #8a949e;
+}
+
+@media (max-width: 575.98px) {
+    .card-indicador .valor { font-size: 1.25rem; }
+    .table-responsive { font-size: .85rem; }
+}

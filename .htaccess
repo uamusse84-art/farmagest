@@ -1,0 +1,39 @@
+# =====================================================================
+# Raiz do projecto. A unica pasta que deve ficar exposta ao servidor Web
+# e public/; este ficheiro existe para que a aplicacao possa ser aberta
+# directamente em http://localhost/farmagest/ quando o projecto e
+# colocado dentro de htdocs, sem obrigar a escrever /public no endereco.
+#
+# Em producao, configure antes a raiz do servidor (DocumentRoot) para
+# apontar para a pasta public/ e este ficheiro deixa de ser necessario.
+# =====================================================================
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # A raiz do projecto vai directamente ao controlador frontal. Encaminhar
+    # apenas para "public/" deixaria o pedido nas maos do modulo de directorios,
+    # que responderia 403 por a listagem estar desactivada.
+    RewriteRule ^$ public/index.php [L]
+
+    # Todo o resto e encaminhado para dentro de public/. As duas condicoes
+    # evitam ciclos: a primeira ignora pedidos ja reescritos internamente, a
+    # segunda ignora os enderecos que ja incluem /public/.
+    RewriteCond %{ENV:REDIRECT_STATUS} ^$
+    RewriteCond %{REQUEST_URI} !public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Sem mod_rewrite, pelo menos a pagina inicial continua a abrir.
+<IfModule !mod_rewrite.c>
+    DirectoryIndex public/index.php
+</IfModule>
+
+# Nunca listar o conteudo da pasta.
+Options -Indexes
+
+# Os ficheiros de configuracao e de dados nunca sao servidos, mesmo que
+# a reescrita acima esteja desactivada.
+<FilesMatch "^\.(env|env\.example|gitignore|htaccess)$">
+    Require all denied
+</FilesMatch>

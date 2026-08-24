@@ -1,0 +1,19 @@
+.env
+storage/logs/*.log
+*.log
+
+# Ficheiro temporario usado pelo tools/capturar-ecras.ps1
+public/_captura.html
+
+# Trabalhos de outras cadeiras que estejam a passar por esta pasta
+docs/31240558*.pdf
+
+__pycache__/
+
+.idea/
+.vscode/
+nbproject/
+
+Thumbs.db
+desktop.ini
+.DS_Store
